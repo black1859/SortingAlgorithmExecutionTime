@@ -6,10 +6,10 @@
 #include "insertion.h"
 #include "selection.h"
 
-#define MIN_SIZE 1000
-#define MAX_SIZE 100000
-#define SIZE_GROTH 5
-#define FOR_LOOP 5
+#define MIN_SIZE 1000000
+#define MAX_SIZE 1000000
+#define SIZE_GROTH 100000
+#define FOR_LOOP 1
 
 void print_array(int* p_array, int array_length) {
 	for (int i = 0; i < array_length; i++) {
@@ -36,7 +36,7 @@ int main(void) {
 	std::chrono::high_resolution_clock::time_point start, finish;
 	std::chrono::duration<double> duration;
 	
-	for (int array_size = MIN_SIZE; array_size < MAX_SIZE+1; array_size *= SIZE_GROTH) {
+	for (int array_size = MIN_SIZE; array_size < MAX_SIZE+1; array_size += SIZE_GROTH) {
 		Array bubble_sort(array_size);
 		Array insertion_sort(array_size);
 		Array selection_sort(array_size);
